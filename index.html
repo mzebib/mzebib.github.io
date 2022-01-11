@@ -8,12 +8,19 @@
         background-repeat: no-repeat;
     }
     
-    .card {
+    .panel {
         background-color: white;
         border-radius: 10px;
         padding: 40px;
         margin: 20px;
         width: 1000px;
+    }
+    
+    .card {
+      text-align: center; 
+      display: grid; 
+      align-items: start; 
+      align-content: flex-start
     }
     
     .title {
@@ -44,8 +51,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     </head>
     <body>
-        <div class="card">
-            <div style="text-align: center; display: grid; align-items: start; align-content: flex-start;">
+        <div class="panel">
+            <div class="card">
                 <div style="text-align: center;">
                     <img src="https://firebasestorage.googleapis.com/v0/b/oracle-sales.appspot.com/o/redwood%2Foracle-logo-black.png?alt=media&token=7966e49f-6d90-47c2-9339-ae0caa2301f9" />
                 </div>
@@ -54,14 +61,14 @@
                 </div>
                 <h1>Steve Zebib</h1>
                 <label style="font-size: 18px;"><i>Senior Applications Engineer</i></label>
-            </div>
-
-            <div style="width: 100%; text-align: center; margin: 40px 0;">
+                            <div style="width: 100%; text-align: center; margin: 20px 0;">
                 <a href="mailto:steve.zebib@gmail.com" class="fa fa-envelope" style="font-size: 28px; color: black; text-decoration: none !important;"></a>
                 <a href="https://www.linkedin.com/in/mzebib/" target="_blank" class="fa fa-linkedin-square" style="font-size: 28px; color: #0a66c2; text-decoration: none !important; margin-left: 16px;"></a>
                 <a href="https://github.com/mzebib" target="_blank" class="fa fa-github" style="font-size: 28px; color: black; text-decoration: none !important; margin-left: 16px;"></a>
                 <a href="https://mzebib.medium.com" target="_blank" style="font-size: 20px; color: black; text-decoration: none !important; font-weight: bold; margin-left: 16px;">Medium</a>
             </div>
+            </div>
+
 
             <h2 class="" style="text-align: left;">About Me</h2>
             <p class="" style="text-align: left; width: 100%;">
