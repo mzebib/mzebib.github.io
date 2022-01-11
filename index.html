@@ -19,6 +19,21 @@
         color: #000000;
         opacity: 0.8;
     }
+    
+    .table-tech table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-tech td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    .table-tech tr:nth-child(even) {
+      background-color: #dddddd;
+    }
 </style>
 <html>
     <head>
@@ -75,7 +90,7 @@
             </table>
             
             <h2 class="" style="text-align: left;">Technologies</h2>
-            <table style="text-align: left">
+            <table class="table-tech">
               <tr>
                 <th scope="row">Oracle</th>
                 <td>Oracle Areas of Expertise: Oracle Cloud, CX Sales, Oracle Visual Builder/JET, Oracle Digital Assistant</td>
