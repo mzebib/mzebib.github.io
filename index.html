@@ -20,7 +20,10 @@
     >
 
     <style>
-        /* Global Styles */
+        /* ==========================================
+           GLOBAL STYLES
+        ========================================== */
+
         * {
             box-sizing: border-box;
         }
@@ -28,7 +31,12 @@
         html {
             min-height: 100%;
             background-color: #252525;
-            background-image: url("https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/redwood-bg.png");
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.25),
+                    rgba(0, 0, 0, 0.25)
+                ),
+                url("https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/redwood-bg.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -44,14 +52,20 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* Main Container */
+        /* ==========================================
+           MAIN CONTAINER
+        ========================================== */
+
         .main-panel {
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* Header */
+        /* ==========================================
+           HEADER
+        ========================================== */
+
         .header-panel {
             display: flex;
             flex-direction: column;
@@ -78,7 +92,10 @@
             margin-bottom: 8px;
         }
 
-        /* Social Links */
+        /* ==========================================
+           SOCIAL LINKS
+        ========================================== */
+
         .social-links {
             display: flex;
             justify-content: center;
@@ -92,11 +109,14 @@
             font-size: 24px;
             text-decoration: none;
             color: #FFFFFF;
-            transition: opacity 0.2s ease;
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
         }
 
         .link-icon:hover {
-            opacity: 0.7;
+            opacity: 0.8;
+            transform: translateY(-3px) scale(1.1);
         }
 
         .link-icon:focus-visible {
@@ -105,13 +125,70 @@
             border-radius: 2px;
         }
 
-        /* Content Panels */
+        /* ==========================================
+           CONTENT PANELS
+        ========================================== */
+
         .content-panel {
+            position: relative;
             background-color: #FCFBFA;
             padding: 20px;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-top: 24px;
+
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.15);
+
+            /* Smooth focus animation */
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease,
+                opacity 0.3s ease,
+                filter 0.3s ease;
         }
+
+        /* ==========================================
+           PANEL HOVER ANIMATION
+        ========================================== */
+
+        @media (hover: hover) {
+
+            /* Highlight hovered panel */
+            .content-panel:hover {
+                z-index: 2;
+
+                transform:
+                    translateY(-5px)
+                    scale(1.01);
+
+                background-color: #FFFFFF;
+
+                box-shadow:
+                    0 12px 30px rgba(0, 0, 0, 0.25),
+                    0 0 15px rgba(255, 255, 255, 0.2);
+            }
+
+            /* Dim other panels */
+            .main-panel:has(.content-panel:hover)
+            .content-panel:not(:hover) {
+                opacity: 0.65;
+                transform: scale(0.99);
+            }
+        }
+
+        /* Keyboard focus */
+        .content-panel:focus-within {
+            z-index: 2;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.25),
+                0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==========================================
+           CONTENT TYPOGRAPHY
+        ========================================== */
 
         .content-panel h2 {
             margin-top: 0;
@@ -124,7 +201,10 @@
             margin-bottom: 0;
         }
 
-        /* Tables */
+        /* ==========================================
+           TABLES
+        ========================================== */
+
         .table-tech {
             width: 100%;
             border-collapse: collapse;
@@ -147,7 +227,10 @@
             line-height: 1.5;
         }
 
-        /* Font Colors */
+        /* ==========================================
+           FONT COLORS
+        ========================================== */
+
         .font-color-light {
             color: #FFFFFF;
         }
@@ -156,8 +239,16 @@
             color: #000000;
         }
 
-        /* Responsive Design */
+        /* ==========================================
+           RESPONSIVE DESIGN
+        ========================================== */
+
         @media (max-width: 768px) {
+
+            html {
+                background-attachment: scroll;
+            }
+
             body {
                 padding: 12px;
             }
@@ -210,13 +301,39 @@
                 padding-top: 6px;
             }
         }
+
+        /* ==========================================
+           ACCESSIBILITY
+        ========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .content-panel,
+            .link-icon {
+                transition: none;
+            }
+
+            .content-panel:hover,
+            .link-icon:hover {
+                transform: none;
+            }
+
+            .main-panel:has(.content-panel:hover)
+            .content-panel:not(:hover) {
+                transform: none;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <main class="main-panel">
 
-        <!-- Header -->
+        <!-- ======================================
+             HEADER
+        ======================================= -->
+
         <header class="header-panel">
 
             <!-- Oracle Logo -->
@@ -236,14 +353,19 @@
                 >
             </div>
 
-            <h1 class="font-color-light">Steve Zebib</h1>
+            <h1 class="font-color-light">
+                Steve Zebib
+            </h1>
 
             <div class="job-title font-color-light">
                 <i>Principal Software Engineer</i>
             </div>
 
             <!-- Social Links -->
-            <nav class="social-links" aria-label="Social media links">
+            <nav
+                class="social-links"
+                aria-label="Social media links"
+            >
 
                 <a
                     title="Email"
@@ -282,9 +404,15 @@
             </nav>
         </header>
 
-        <!-- About -->
+        <!-- ======================================
+             ABOUT
+        ======================================= -->
+
         <section class="content-panel">
-            <h2 class="font-color-dark">ABOUT</h2>
+
+            <h2 class="font-color-dark">
+                ABOUT
+            </h2>
 
             <p class="font-color-dark">
                 Steve Zebib is a Principal Software Engineer at Oracle.
@@ -295,58 +423,78 @@
                 Steve lives in the Washington D.C. Metro Area and enjoys
                 traveling, technology, and sports.
             </p>
+
         </section>
 
-        <!-- Technical Expertise -->
+        <!-- ======================================
+             TECHNICAL EXPERTISE
+        ======================================= -->
+
         <section class="content-panel">
-            <h2 class="font-color-dark">TECHNICAL EXPERTISE</h2>
+
+            <h2 class="font-color-dark">
+                TECHNICAL EXPERTISE
+            </h2>
 
             <table class="table-tech">
                 <tbody>
+
                     <tr>
                         <th scope="row">ORACLE</th>
                         <td>
-                            Oracle Sales Cloud, Oracle Visual Builder / JET,
-                            Oracle Digital Assistant
+                            Oracle Fusion Cloud Applications,
+                            Oracle Sales,
+                            Oracle Visual Builder,
+                            Oracle VBS,
+                            Oracle JET,
+                            Oracle Digital Assistant (ODA),
+                            Oracle Cloud Infrastructure (OCI),
+                            Oracle Visual Builder (VBS),
+                            Oracle AI Agent Studio
                         </td>
                     </tr>
 
                     <tr>
-                        <th scope="row">PROGRAMMING LANGUAGES</th>
+                        <th scope="row">
+                            PROGRAMMING LANGUAGES
+                        </th>
                         <td>
-                            Java, Python, C++, C#, JavaScript, TypeScript
+                            Java, Python, C++, C#,
+                            JavaScript, TypeScript
                         </td>
                     </tr>
 
                     <tr>
                         <th scope="row">FRONTEND</th>
                         <td>
-                            JavaScript, HTML, CSS, Bootstrap, Angular,
-                            JSON, Node.js, GWT
+                            JavaScript, HTML, CSS, Bootstrap,
+                            Angular, JSON, Node.js, GWT
                         </td>
                     </tr>
 
                     <tr>
                         <th scope="row">BACKEND</th>
                         <td>
-                            REST, Spring Framework, Hibernate ORM,
-                            JUnit, Mockito
+                            REST, Spring Framework,
+                            Hibernate ORM, JUnit, Mockito
                         </td>
                     </tr>
 
                     <tr>
                         <th scope="row">DATABASES</th>
                         <td>
-                            SQL, RDBMS (Oracle, PostgreSQL, MySQL,
-                            Microsoft SQL Server), NoSQL (MongoDB, Cassandra)
+                            SQL, RDBMS (Oracle, PostgreSQL,
+                            MySQL, Microsoft SQL Server),
+                            NoSQL (MongoDB, Cassandra)
                         </td>
                     </tr>
 
                     <tr>
                         <th scope="row">TOOLS</th>
                         <td>
-                            Git, Maven, Gradle, Docker, Jenkins, Nexus,
-                            Dynatrace, SonarQube, Eclipse, IntelliJ IDEA,
+                            Git, Maven, Gradle, Docker,
+                            Jenkins, Nexus, Dynatrace,
+                            SonarQube, Eclipse, IntelliJ IDEA,
                             VS Code, Android Studio, Postman
                         </td>
                     </tr>
@@ -354,8 +502,8 @@
                     <tr>
                         <th scope="row">PLATFORMS</th>
                         <td>
-                            Oracle Cloud, Google Cloud, Microsoft Azure,
-                            Cloud Foundry
+                            Oracle Cloud, Google Cloud,
+                            Microsoft Azure, Cloud Foundry
                         </td>
                     </tr>
 
@@ -365,33 +513,52 @@
                             Mac OS, Windows, Linux
                         </td>
                     </tr>
+
                 </tbody>
             </table>
+
         </section>
 
-        <!-- Education -->
+        <!-- ======================================
+             EDUCATION
+        ======================================= -->
+
         <section class="content-panel">
-            <h2 class="font-color-dark">EDUCATION</h2>
+
+            <h2 class="font-color-dark">
+                EDUCATION
+            </h2>
 
             <table class="table-tech">
                 <tbody>
+
                     <tr>
                         <th scope="row">
                             Georgia Institute of Technology
                         </th>
-                        <td>MS, Computer Science</td>
-                        <td>2023</td>
+                        <td>
+                            MS, Computer Science
+                        </td>
+                        <td>
+                            2023
+                        </td>
                     </tr>
 
                     <tr>
                         <th scope="row">
                             Wayne State University
                         </th>
-                        <td>BS, Electrical and Computer Engineering</td>
-                        <td>2013</td>
+                        <td>
+                            BS, Electrical and Computer Engineering
+                        </td>
+                        <td>
+                            2013
+                        </td>
                     </tr>
+
                 </tbody>
             </table>
+
         </section>
 
     </main>
