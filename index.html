@@ -1,146 +1,399 @@
 <!DOCTYPE html>
-<style>
-    html {
-        display: flex;
-        justify-content: center;
-        background-image: url("https://github.com/mzebib/mzebib.github.io/blob/master/redwood-bg.png?raw=true");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    
-    .main-panel {
-        margin: 20px;
-        width: 1000px;
-    }
-    
-    .header-panel {
-      text-align: center; 
-      display: grid; 
-      align-items: start; 
-      align-content: flex-start
-    }
-    
-    .content-panel {
-        background: #FCFBFA;
-        padding: 16px;
-        border-radius: 6px;
-        margin-top: 24px;
-    }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .table-tech table {
-        width: 100%;
-    }
+    <title>Steve Zebib</title>
 
-    .table-tech td,th {
-        text-align: left;
-        padding: 8px;
-        color: #000000;
-    }
-    
-    .font-color-light {
-        color: #FFFFFF;   
-    }
-    
-    .font-color-dark {
-        color: #000000;   
-    }
-    
-    .link-icon {
-        font-size: 24px !important;
-        text-decoration: none !important;
-        color: #FFFFFF;
-    }
-    
-</style>
-<html>
-    <head>
-        <title>Steve Zebib</title>
-        <link type="image/ico" rel="icon" href="https://firebasestorage.googleapis.com/v0/b/app-dev-us.appspot.com/o/steve-oracle.png?alt=media&token=1c4fbefb-4665-4cc4-9c30-e84a43c723dc" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="main-panel">
-            <div class="header-panel">
-                <div style="text-align: center;">
-                    <img src="https://github.com/mzebib/mzebib.github.io/blob/master/oracle-logo.png?raw=true" />
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://github.com/mzebib/mzebib.github.io/blob/master/mzebib.png?raw=true" width="250" style="border-radius: 8px"/>
-                </div>
-                <h1 class="font-color-light">Steve Zebib</h1>
-                <label class="font-color-light" style="font-size: 20px; margin-bottom: 8px;"><i>Principal Software Engineer</i></label>
-                <div class="font-color-light" style="width: 100%; text-align: center; margin: 20px 0;">
-                    <a title="Email" href="mailto:steve.zebib@gmail.com" class="fa fa-envelope font-color-light link-icon"></a>
-                    <a title="LinkedIn" href="https://www.linkedin.com/in/mzebib/" target="_blank" class="fa fa-linkedin-square link-icon" style="margin-left: 16px;"></a>
-                    <a title="GitHub" href="https://github.com/mzebib" target="_blank" class="fa fa-github link-icon" style="margin-left: 16px;"></a>
-                    <a title="Medium" href="https://mzebib.medium.com" target="_blank" class="fa fa-medium link-icon" style="margin-left: 16px;"></a>
-                </div>
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://firebasestorage.googleapis.com/v0/b/app-dev-us.appspot.com/o/steve-oracle.png?alt=media&amp;token=1c4fbefb-4665-4cc4-9c30-e84a43c723dc"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            background-color: #252525;
+            background-image: url("https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/redwood-bg.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Main Container */
+        .main-panel {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-panel img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .profile-image {
+            width: 250px;
+            border-radius: 8px;
+        }
+
+        .header-panel h1 {
+            margin-bottom: 10px;
+        }
+
+        .job-title {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .link-icon {
+            font-size: 24px;
+            text-decoration: none;
+            color: #FFFFFF;
+            transition: opacity 0.2s ease;
+        }
+
+        .link-icon:hover {
+            opacity: 0.7;
+        }
+
+        .link-icon:focus-visible {
+            outline: 2px solid #FFFFFF;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        /* Content Panels */
+        .content-panel {
+            background-color: #FCFBFA;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 24px;
+        }
+
+        .content-panel h2 {
+            margin-top: 0;
+            text-align: left;
+        }
+
+        .content-panel p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Tables */
+        .table-tech {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-tech th,
+        .table-tech td {
+            text-align: left;
+            padding: 10px 8px;
+            color: #000000;
+            vertical-align: top;
+        }
+
+        .table-tech th {
+            width: 30%;
+            font-weight: bold;
+        }
+
+        .table-tech td {
+            line-height: 1.5;
+        }
+
+        /* Font Colors */
+        .font-color-light {
+            color: #FFFFFF;
+        }
+
+        .font-color-dark {
+            color: #000000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .main-panel {
+                width: 100%;
+            }
+
+            .profile-image {
+                width: 200px;
+            }
+
+            .header-panel h1 {
+                font-size: 28px;
+            }
+
+            .job-title {
+                font-size: 18px;
+            }
+
+            .content-panel {
+                padding: 16px;
+                margin-top: 16px;
+            }
+
+            .content-panel h2 {
+                font-size: 22px;
+            }
+
+            .content-panel p {
+                font-size: 16px;
+            }
+
+            .table-tech th,
+            .table-tech td {
+                display: block;
+                width: 100%;
+                padding: 6px 4px;
+            }
+
+            .table-tech th {
+                padding-top: 16px;
+            }
+
+            .table-tech td {
+                padding-bottom: 12px;
+            }
+
+            .table-tech tr:first-child th {
+                padding-top: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main-panel">
+
+        <!-- Header -->
+        <header class="header-panel">
+
+            <!-- Oracle Logo -->
+            <div>
+                <img
+                    src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/oracle-logo.png"
+                    alt="Oracle Logo"
+                >
             </div>
-            
-            <div class="content-panel">
-                <h2 class="font-color-dark" style="text-align: left;">ABOUT</h2>
-                <p class="font-color-dark" style="text-align: left; width: 100%; font-size: 18px;">
-                    Steve Zebib is a Principal Software Engineer at Oracle. He has over 10 years of software development experience. He has built a variety of applications utilizing different technologies throughout his career. 
-                    Steve lives in the Washington D.C. Metro Area and enjoys traveling, technology, and sports.
-                </p>
+
+            <!-- Profile Picture -->
+            <div>
+                <img
+                    src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/mzebib.png"
+                    alt="Steve Zebib"
+                    class="profile-image"
+                >
             </div>
-            
-            <div class="content-panel">
-                <h2 class="font-color-dark" style="text-align: left;">TECHNICAL EXPERTISE</h2>
-                <table class="table-tech" style="width: 100%;">
+
+            <h1 class="font-color-light">Steve Zebib</h1>
+
+            <div class="job-title font-color-light">
+                <i>Principal Software Engineer</i>
+            </div>
+
+            <!-- Social Links -->
+            <nav class="social-links" aria-label="Social media links">
+
+                <a
+                    title="Email"
+                    aria-label="Email Steve Zebib"
+                    href="mailto:steve.zebib@gmail.com"
+                    class="fa fa-envelope link-icon"
+                ></a>
+
+                <a
+                    title="LinkedIn"
+                    aria-label="LinkedIn profile"
+                    href="https://www.linkedin.com/in/mzebib/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="fa fa-linkedin-square link-icon"
+                ></a>
+
+                <a
+                    title="GitHub"
+                    aria-label="GitHub profile"
+                    href="https://github.com/mzebib"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="fa fa-github link-icon"
+                ></a>
+
+                <a
+                    title="Medium"
+                    aria-label="Medium profile"
+                    href="https://mzebib.medium.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="fa fa-medium link-icon"
+                ></a>
+
+            </nav>
+        </header>
+
+        <!-- About -->
+        <section class="content-panel">
+            <h2 class="font-color-dark">ABOUT</h2>
+
+            <p class="font-color-dark">
+                Steve Zebib is a Principal Software Engineer at Oracle.
+                He has over 10 years of software development experience.
+                He has built a variety of applications utilizing different
+                technologies throughout his career.
+
+                Steve lives in the Washington D.C. Metro Area and enjoys
+                traveling, technology, and sports.
+            </p>
+        </section>
+
+        <!-- Technical Expertise -->
+        <section class="content-panel">
+            <h2 class="font-color-dark">TECHNICAL EXPERTISE</h2>
+
+            <table class="table-tech">
+                <tbody>
                     <tr>
                         <th scope="row">ORACLE</th>
-                        <td>Oracle Sales Cloud, Oracle Visual Builder / JET, Oracle Digital Assistant</td>
+                        <td>
+                            Oracle Sales Cloud, Oracle Visual Builder / JET,
+                            Oracle Digital Assistant
+                        </td>
                     </tr>
-                     <tr>
+
+                    <tr>
                         <th scope="row">PROGRAMMING LANGUAGES</th>
-                        <td>Java, Python, C++, C#, JavaScript, TypeScript</td>
+                        <td>
+                            Java, Python, C++, C#, JavaScript, TypeScript
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">FRONTEND</th>
-                        <td>JavaScript, HTML, CSS, Bootstrap, Angular, JSON, Node.js, GWT</td>
+                        <td>
+                            JavaScript, HTML, CSS, Bootstrap, Angular,
+                            JSON, Node.js, GWT
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">BACKEND</th>
-                        <td>REST, Spring Framework, Hibernate ORM, JUnit, Mockito</td>
+                        <td>
+                            REST, Spring Framework, Hibernate ORM,
+                            JUnit, Mockito
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">DATABASES</th>
-                        <td>SQL, RDBMS (Oracle, PostgreSQL, MySQL, Microsoft SQL Server), NoSQL (MongoDB, Cassandra)</td>
+                        <td>
+                            SQL, RDBMS (Oracle, PostgreSQL, MySQL,
+                            Microsoft SQL Server), NoSQL (MongoDB, Cassandra)
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">TOOLS</th>
-                        <td>Git, Maven, Gradle, Docker, Jenkins, Nexus, Dynatrace, SonarQube, Eclipse, IntelliJ IDEA, VS Code, Android Studio, Postman</td>
+                        <td>
+                            Git, Maven, Gradle, Docker, Jenkins, Nexus,
+                            Dynatrace, SonarQube, Eclipse, IntelliJ IDEA,
+                            VS Code, Android Studio, Postman
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">PLATFORMS</th>
-                        <td>Oracle Cloud, Google Cloud, Microsoft Azure, Cloud Foundry</td>
+                        <td>
+                            Oracle Cloud, Google Cloud, Microsoft Azure,
+                            Cloud Foundry
+                        </td>
                     </tr>
+
                     <tr>
                         <th scope="row">OS</th>
-                        <td>Mac OS, Windows, Linux</td>
+                        <td>
+                            Mac OS, Windows, Linux
+                        </td>
                     </tr>
-                </table>
-            </div>
-            
-             <div class="content-panel">
-                <h2 class="font-color-dark" style="text-align: left;">EDUCATION</h2>
-                <table class="table-tech" style="width: 100%;">
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Education -->
+        <section class="content-panel">
+            <h2 class="font-color-dark">EDUCATION</h2>
+
+            <table class="table-tech">
+                <tbody>
                     <tr>
-                        <th scope="row">Georgia Institute of Technology </th>
+                        <th scope="row">
+                            Georgia Institute of Technology
+                        </th>
                         <td>MS, Computer Science</td>
                         <td>2023</td>
                     </tr>
+
                     <tr>
-                        <th scope="row">Wayne State University</th>
+                        <th scope="row">
+                            Wayne State University
+                        </th>
                         <td>BS, Electrical and Computer Engineering</td>
                         <td>2013</td>
-                    </tr>                 
-                </table>
-            </div>
-        </div>
-    </body>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</body>
 </html>
