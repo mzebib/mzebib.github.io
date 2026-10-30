@@ -3,582 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Steve Zebib — Principal Software Engineer specializing in Oracle technologies, agentic AI, and enterprise software development.">
     <title>Steve Zebib</title>
-
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        type="image/png"
-        href="https://firebasestorage.googleapis.com/v0/b/app-dev-us.appspot.com/o/steve-oracle.png?alt=media&amp;token=1c4fbefb-4665-4cc4-9c30-e84a43c723dc"
-    >
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    >
-
+    <link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/app-dev-us.appspot.com/o/steve-oracle.png?alt=media&amp;token=1c4fbefb-4665-4cc4-9c30-e84a43c723dc">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        /* ==========================================
-           GLOBAL STYLES
-        ========================================== */
-
-        * {
-            box-sizing: border-box;
-        }
-
+        * { box-sizing: border-box; }
         html {
             min-height: 100%;
             background-color: #252525;
-            background-image:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.25),
-                    rgba(0, 0, 0, 0.25)
-                ),
-                url("https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/redwood-bg.png");
+            background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url("https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/redwood-bg.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-
-        body {
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* ==========================================
-           MAIN CONTAINER
-        ========================================== */
-
-        .main-panel {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* ==========================================
-           HEADER
-        ========================================== */
-
-        .header-panel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .header-panel img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .profile-image {
-            width: 250px;
-            border-radius: 8px;
-        }
-
-        .header-panel h1 {
-            margin-bottom: 10px;
-        }
-
-        .job-title {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        /* ==========================================
-           SOCIAL LINKS
-        ========================================== */
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            width: 100%;
-            margin: 20px 0;
-        }
-
-        .link-icon {
-            font-size: 24px;
-            text-decoration: none;
-            color: #FFFFFF;
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
-        }
-
-        .link-icon:hover {
-            opacity: 0.8;
-            transform: translateY(-3px) scale(1.1);
-        }
-
-        .link-icon:focus-visible {
-            outline: 2px solid #FFFFFF;
-            outline-offset: 4px;
-            border-radius: 2px;
-        }
-
-        /* ==========================================
-           CONTENT PANELS
-        ========================================== */
-
-        .content-panel {
-            position: relative;
-            background-color: #FCFBFA;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 24px;
-
-            box-shadow:
-                0 4px 16px rgba(0, 0, 0, 0.15);
-
-            /* Smooth focus animation */
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.3s ease,
-                opacity 0.3s ease,
-                filter 0.3s ease;
-        }
-
-        /* ==========================================
-           PANEL HOVER ANIMATION
-        ========================================== */
-
+        body { display: flex; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; }
+        .main-panel { width: 100%; max-width: 1000px; margin: 0 auto; }
+        .header-panel { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .header-panel img { max-width: 100%; height: auto; }
+        .profile-image { width: 250px; border-radius: 8px; }
+        .header-panel h1 { margin-bottom: 10px; }
+        .job-title { font-size: 20px; margin-bottom: 8px; }
+        .social-links { display: flex; justify-content: center; align-items: center; gap: 16px; width: 100%; margin: 20px 0; }
+        .link-icon { font-size: 24px; text-decoration: none; color: #fff; transition: opacity .3s ease, transform .3s ease; }
+        .link-icon:hover { opacity: .8; transform: translateY(-3px) scale(1.1); }
+        .link-icon:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 2px; }
+        .content-panel { position: relative; background: #fcfbfa; padding: 20px; border-radius: 8px; margin-top: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.15); transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease, opacity .3s ease; }
         @media (hover: hover) {
-
-            /* Highlight hovered panel */
-            .content-panel:hover {
-                z-index: 2;
-
-                transform:
-                    translateY(-5px)
-                    scale(1.01);
-
-                background-color: #FFFFFF;
-
-                box-shadow:
-                    0 12px 30px rgba(0, 0, 0, 0.25),
-                    0 0 15px rgba(255, 255, 255, 0.2);
-            }
-
-            /* Dim other panels */
-            .main-panel:has(.content-panel:hover)
-            .content-panel:not(:hover) {
-                opacity: 0.65;
-                transform: scale(0.99);
-            }
+            .content-panel:hover { z-index: 2; transform: translateY(-5px) scale(1.01); background: #fff; box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 15px rgba(255,255,255,.2); }
+            .main-panel:has(.content-panel:hover) .content-panel:not(:hover) { opacity: .65; transform: scale(.99); }
         }
-
-        /* Keyboard focus */
-        .content-panel:focus-within {
-            z-index: 2;
-
-            box-shadow:
-                0 12px 30px rgba(0, 0, 0, 0.25),
-                0 0 15px rgba(255, 255, 255, 0.2);
-        }
-
-        /* ==========================================
-           CONTENT TYPOGRAPHY
-        ========================================== */
-
-        .content-panel h2 {
-            margin-top: 0;
-            text-align: left;
-        }
-
-        .content-panel p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* ==========================================
-           TABLES
-        ========================================== */
-
-        .table-tech {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .table-tech th,
-        .table-tech td {
-            text-align: left;
-            padding: 10px 8px;
-            color: #000000;
-            vertical-align: top;
-        }
-
-        .table-tech th {
-            width: 30%;
-            font-weight: bold;
-        }
-
-        .table-tech td {
-            line-height: 1.5;
-        }
-
-        /* ==========================================
-           FONT COLORS
-        ========================================== */
-
-        .font-color-light {
-            color: #FFFFFF;
-        }
-
-        .font-color-dark {
-            color: #000000;
-        }
-
-        /* ==========================================
-           RESPONSIVE DESIGN
-        ========================================== */
-
+        .content-panel:focus-within { z-index: 2; box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 15px rgba(255,255,255,.2); }
+        .content-panel h2 { margin-top: 0; text-align: left; }
+        .content-panel p { font-size: 18px; line-height: 1.6; margin-bottom: 0; }
+        .font-color-light { color: #fff; }
+        .font-color-dark { color: #000; }
+        .table-tech { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.6; }
+        .table-tech th, .table-tech td { text-align: left; padding: 10px 12px; vertical-align: top; border-bottom: 1px solid #e5e7eb; }
+        .table-tech th[scope="row"] { width: 32%; font-weight: 600; color: #37474f; }
+        .table-tech td { color: #455a64; }
+        .table-tech .tech-section th { width: auto; background: #f0f3f7; color: #263238; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 12px 15px; border-bottom: 2px solid #cfd8dc; }
+        .table-tech .tech-section:not(:first-child) th { border-top: 14px solid #fcfbfa; }
+        .table-tech tr:not(.tech-section):hover { background: #fafbfc; }
+        .table-education th[scope="row"] { width: 40%; }
+        .table-education td:last-child { width: 70px; white-space: nowrap; text-align: right; }
         @media (max-width: 768px) {
-
-            html {
-                background-attachment: scroll;
-            }
-
-            body {
-                padding: 12px;
-            }
-
-            .main-panel {
-                width: 100%;
-            }
-
-            .profile-image {
-                width: 200px;
-            }
-
-            .header-panel h1 {
-                font-size: 28px;
-            }
-
-            .job-title {
-                font-size: 18px;
-            }
-
-            .content-panel {
-                padding: 16px;
-                margin-top: 16px;
-            }
-
-            .content-panel h2 {
-                font-size: 22px;
-            }
-
-            .content-panel p {
-                font-size: 16px;
-            }
-
-            .table-tech th,
-            .table-tech td {
-                display: block;
-                width: 100%;
-                padding: 6px 4px;
-            }
-
-            .table-tech th {
-                padding-top: 16px;
-            }
-
-            .table-tech td {
-                padding-bottom: 12px;
-            }
-
-            .table-tech tr:first-child th {
-                padding-top: 6px;
-            }
+            html { background-attachment: scroll; }
+            body { padding: 12px; }
+            .profile-image { width: 200px; }
+            .header-panel h1 { font-size: 28px; }
+            .job-title { font-size: 18px; }
+            .content-panel { padding: 16px; margin-top: 16px; }
+            .content-panel h2 { font-size: 22px; }
+            .content-panel p { font-size: 16px; }
+            .table-tech th[scope="row"], .table-tech td { display: block; width: 100%; padding: 6px 8px; }
+            .table-tech th[scope="row"] { padding-top: 12px; border-bottom: 0; }
+            .table-tech td { padding-bottom: 12px; }
+            .table-tech .tech-section th { display: table-cell; width: auto; }
+            .table-education td:last-child { width: 100%; text-align: left; }
         }
-
-        /* ==========================================
-           ACCESSIBILITY
-        ========================================== */
-
         @media (prefers-reduced-motion: reduce) {
-
-            .content-panel,
-            .link-icon {
-                transition: none;
-            }
-
-            .content-panel:hover,
-            .link-icon:hover {
-                transform: none;
-            }
-
-            .main-panel:has(.content-panel:hover)
-            .content-panel:not(:hover) {
-                transform: none;
-            }
+            .content-panel, .link-icon { transition: none; }
+            .content-panel:hover, .link-icon:hover, .main-panel:has(.content-panel:hover) .content-panel:not(:hover) { transform: none; }
         }
-
     </style>
 </head>
-
 <body>
     <main class="main-panel">
-
-        <!-- ======================================
-             HEADER
-        ======================================= -->
-
         <header class="header-panel">
-
-            <!-- Oracle Logo -->
-            <div>
-                <img
-                    src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/oracle-logo.png"
-                    alt="Oracle Logo"
-                >
-            </div>
-
-            <!-- Profile Picture -->
-            <div>
-                <img
-                    src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/mzebib.png"
-                    alt="Steve Zebib"
-                    class="profile-image"
-                >
-            </div>
-
-            <h1 class="font-color-light">
-                Steve Zebib
-            </h1>
-
-            <div class="job-title font-color-light">
-                <i>Principal Software Engineer</i>
-            </div>
-
-            <!-- Social Links -->
-            <nav
-                class="social-links"
-                aria-label="Social media links"
-            >
-
-                <a
-                    title="Email"
-                    aria-label="Email Steve Zebib"
-                    href="mailto:steve.zebib@gmail.com"
-                    class="fa fa-envelope link-icon"
-                ></a>
-
-                <a
-                    title="LinkedIn"
-                    aria-label="LinkedIn profile"
-                    href="https://www.linkedin.com/in/mzebib/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="fa fa-linkedin-square link-icon"
-                ></a>
-
-                <a
-                    title="GitHub"
-                    aria-label="GitHub profile"
-                    href="https://github.com/mzebib"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="fa fa-github link-icon"
-                ></a>
-
-                <a
-                    title="Medium"
-                    aria-label="Medium profile"
-                    href="https://mzebib.medium.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="fa fa-medium link-icon"
-                ></a>
-
+            <div><img src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/oracle-logo.png" alt="Oracle Logo"></div>
+            <div><img src="https://raw.githubusercontent.com/mzebib/mzebib.github.io/master/mzebib.png" alt="Steve Zebib" class="profile-image"></div>
+            <h1 class="font-color-light">Steve Zebib</h1>
+            <div class="job-title font-color-light"><i>Principal Software Engineer</i></div>
+            <nav class="social-links" aria-label="Social media links">
+                <a title="Email" aria-label="Email Steve Zebib" href="mailto:steve.zebib@gmail.com" class="fa fa-envelope link-icon"></a>
+                <a title="LinkedIn" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/mzebib/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin-square link-icon"></a>
+                <a title="GitHub" aria-label="GitHub profile" href="https://github.com/mzebib" target="_blank" rel="noopener noreferrer" class="fa fa-github link-icon"></a>
+                <a title="Medium" aria-label="Medium profile" href="https://mzebib.medium.com" target="_blank" rel="noopener noreferrer" class="fa fa-medium link-icon"></a>
             </nav>
         </header>
-
-        <!-- ======================================
-             ABOUT
-        ======================================= -->
-
-        <section class="content-panel">
-
-            <h2 class="font-color-dark">
-                ABOUT
-            </h2>
-
-            <p class="font-color-dark">
-                Steve Zebib is a Principal Software Engineer at Oracle.
-                He has over 10 years of software development experience.
-                He has built a variety of applications utilizing different
-                technologies throughout his career.
-
-                Steve lives in the Washington D.C. Metro Area and enjoys
-                traveling, technology, and sports.
-            </p>
-
+        <section class="content-panel" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="font-color-dark">ABOUT</h2>
+            <p class="font-color-dark">Steve Zebib is a Principal Software Engineer at Oracle. He has over 10 years of software development experience. He has built a variety of applications utilizing different technologies throughout his career. Steve lives in the Washington D.C. Metro Area and enjoys traveling, technology, and sports.</p>
         </section>
-
-        <!-- ======================================
-             TECHNICAL EXPERTISE
-        ======================================= -->
-
-        <section class="content-panel">
-
-            <h2 class="font-color-dark">
-                TECHNICAL EXPERTISE
-            </h2>
-
+        <section class="content-panel" aria-labelledby="expertise-heading">
+            <h2 id="expertise-heading" class="font-color-dark">TECHNICAL EXPERTISE</h2>
             <table class="table-tech">
                 <tbody>
-
-                    <tr>
-                        <th scope="row">ORACLE</th>
-                        <td>
-                            Oracle Fusion Cloud Applications,
-                            Oracle Sales,
-                            Oracle Visual Builder,
-                            Oracle VBS,
-                            Oracle JET,
-                            Oracle Digital Assistant (ODA),
-                            Oracle Cloud Infrastructure (OCI),
-                            Oracle Visual Builder (VBS),
-                            Oracle AI Agent Studio
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">AGENTIC AI & LLMs</th>
-                        <td>
-                            LLM Models (OpenAI, Cohere, Google Gemini),
-                            Agentic AI Frameworks (Microsoft AutoGen),
-                            Agentic AI Architectures (Workflow Agents, Supervisor Agents, Multi-Agent Orchestration),
-                            RAG,
-                            Agentic AI Protocols (MCP, A2A),
-                            Prompt Engineering
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">
-                            PROGRAMMING LANGUAGES
-                        </th>
-                        <td>
-                            Java, Python, C++, C#, JavaScript, TypeScript
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">FRONTEND</th>
-                        <td>
-                          HTML, CSS, Bootstrap, Angular, GWT
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">BACKEND</th>
-                        <td>
-                            REST APIs, Microservices, Node.js, Spring Boot, Spring Framework, Hibernate ORM, JPA
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">TESTING</th>
-                        <td>
-                            JUnit, Mockito
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">DATABASES</th>
-                        <td>
-                            Relational Databases (Oracle, PostgreSQL, MySQL, Microsoft SQL Server), NoSQL Databases (MongoDB, Cassandra), SQL
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">TOOLS</th>
-                        <td>
-                            Version Control (Git),
-                            Build & Package Management (Maven, Gradle, npm),
-                            CI/CD (Jenkins),
-                            Artifact Management (Nexus),
-                            Containerization & Orchestration (Docker, Kubernetes),
-                            Code Quality (SonarQube),
-                            Monitoring (Dynatrace),
-                            IDEs (IntelliJ IDEA, Eclipse, VS Code, Android Studio),
-                            API Development & Testing (Postman, OpenAPI/Swagger)
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">PLATFORMS</th>
-                        <td>
-                            Oracle Cloud Infrastructure (OCI), Google Cloud, Microsoft Azure, Cloud Foundry
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">OS</th>
-                        <td>
-                            Mac OS, Windows, Linux
-                        </td>
-                    </tr>
-
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">ORACLE TECHNOLOGIES</th></tr>
+                    <tr><th scope="row">Applications</th><td>Oracle Fusion Cloud Applications, Oracle Sales</td></tr>
+                    <tr><th scope="row">Development</th><td>Oracle Visual Builder, Oracle Visual Builder Studio (VBS), Oracle JET</td></tr>
+                    <tr><th scope="row">AI Technologies</th><td>Oracle AI Agent Studio, Oracle Digital Assistant (ODA)</td></tr>
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">AGENTIC AI &amp; LLMs</th></tr>
+                    <tr><th scope="row">LLM Providers</th><td>OpenAI, Cohere, Google Gemini</td></tr>
+                    <tr><th scope="row">Agentic AI Frameworks</th><td>Microsoft AutoGen</td></tr>
+                    <tr><th scope="row">Agentic AI Architectures</th><td>Workflow Agents, Supervisor Agents, Multi-Agent Orchestration</td></tr>
+                    <tr><th scope="row">AI Knowledge &amp; Retrieval</th><td>Retrieval-Augmented Generation (RAG)</td></tr>
+                    <tr><th scope="row">Agent Protocols</th><td>Model Context Protocol (MCP), Agent2Agent (A2A)</td></tr>
+                    <tr><th scope="row">LLM Techniques</th><td>Prompt Engineering</td></tr>
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">SOFTWARE DEVELOPMENT</th></tr>
+                    <tr><th scope="row">Programming Languages</th><td>Java, Python, C++, C#, JavaScript, TypeScript</td></tr>
+                    <tr><th scope="row">Frontend</th><td>HTML, CSS, Bootstrap, Angular, GWT</td></tr>
+                    <tr><th scope="row">Backend</th><td>REST APIs, Microservices, Node.js, Spring Boot, Spring Framework, Hibernate ORM, JPA</td></tr>
+                    <tr><th scope="row">Testing</th><td>JUnit, Mockito</td></tr>
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">DATA MANAGEMENT</th></tr>
+                    <tr><th scope="row">Relational Databases</th><td>Oracle, PostgreSQL, MySQL, Microsoft SQL Server</td></tr>
+                    <tr><th scope="row">NoSQL Databases</th><td>MongoDB, Cassandra</td></tr>
+                    <tr><th scope="row">Query Languages</th><td>SQL</td></tr>
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">DEVELOPMENT TOOLS &amp; DEVOPS</th></tr>
+                    <tr><th scope="row">Version Control</th><td>Git</td></tr>
+                    <tr><th scope="row">Build &amp; Package Management</th><td>Maven, Gradle, npm</td></tr>
+                    <tr><th scope="row">CI/CD</th><td>Jenkins</td></tr>
+                    <tr><th scope="row">Artifact Management</th><td>Nexus</td></tr>
+                    <tr><th scope="row">Containerization &amp; Orchestration</th><td>Docker, Kubernetes</td></tr>
+                    <tr><th scope="row">Code Quality</th><td>SonarQube</td></tr>
+                    <tr><th scope="row">Monitoring &amp; Observability</th><td>Dynatrace</td></tr>
+                    <tr><th scope="row">IDEs</th><td>IntelliJ IDEA, Eclipse, VS Code, Android Studio</td></tr>
+                    <tr><th scope="row">API Development &amp; Testing</th><td>Postman, OpenAPI/Swagger</td></tr>
+                    <tr class="tech-section"><th colspan="2" scope="colgroup">CLOUD &amp; PLATFORMS</th></tr>
+                    <tr><th scope="row">Cloud Platforms</th><td>Oracle Cloud Infrastructure (OCI), Google Cloud Platform (GCP), Microsoft Azure</td></tr>
+                    <tr><th scope="row">Application Platforms</th><td>Cloud Foundry</td></tr>
+                    <tr><th scope="row">Operating Systems</th><td>macOS, Windows, Linux</td></tr>
                 </tbody>
             </table>
-
         </section>
-
-        <!-- ======================================
-             EDUCATION
-        ======================================= -->
-
-        <section class="content-panel">
-
-            <h2 class="font-color-dark">
-                EDUCATION
-            </h2>
-
-            <table class="table-tech">
+        <section class="content-panel" aria-labelledby="education-heading">
+            <h2 id="education-heading" class="font-color-dark">EDUCATION</h2>
+            <table class="table-tech table-education">
                 <tbody>
-
-                    <tr>
-                        <th scope="row">
-                            Georgia Institute of Technology
-                        </th>
-                        <td>
-                            MS, Computer Science
-                        </td>
-                        <td>
-                            2023
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">
-                            Wayne State University
-                        </th>
-                        <td>
-                            BS, Electrical and Computer Engineering
-                        </td>
-                        <td>
-                            2013
-                        </td>
-                    </tr>
-
+                    <tr><th scope="row">Georgia Institute of Technology</th><td>MS, Computer Science</td><td>2023</td></tr>
+                    <tr><th scope="row">Wayne State University</th><td>BS, Electrical and Computer Engineering</td><td>2013</td></tr>
                 </tbody>
             </table>
-
         </section>
-
     </main>
 </body>
 </html>
